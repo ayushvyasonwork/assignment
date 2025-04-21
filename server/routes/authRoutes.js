@@ -4,5 +4,4 @@ import { requestSignup, verifySignup } from '../controllers/auth.js';
 const router = express.Router();
 router.post('/signup', requestSignup);
 router.get('/verify/:token', verifySignup);
-
 export default router;

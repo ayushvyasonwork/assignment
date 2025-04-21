@@ -3,14 +3,14 @@ import cors from 'cors';
 import dbConnect from './utils/dbConnect.js';
 import mongoRoutes from './routes/authRoutes.js';
 import mysqlRoutes from './routes/authRoutesMySQL.js';
-
+import updateRoutes from './routes/updateRoutes.js';
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use('/api/mongo', mongoRoutes);
 app.use('/api/mysql', mysqlRoutes);
-
+app.use('/api/update',updateRoutes);
 app.get('/', (req, res) => res.send('✅ Server Running'));
 
 dbConnect().then(() => {
